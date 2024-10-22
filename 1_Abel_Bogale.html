@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abel Bogale</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #c3c3c3;"></canvas>
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+
+        // Draw rectangle outline
+        ctx.strokeStyle = "#000000"; // Rectangle outline color
+        ctx.strokeRect(20, 20, 160, 60); // x, y, width, height
+
+        // Draw X axis
+        ctx.beginPath();
+        ctx.moveTo(20, 50); // Start from the left side of the rectangle
+        ctx.lineTo(180, 50); // End at the right side of the rectangle
+        ctx.stroke();
+
+        // Draw Y axis
+        ctx.beginPath();
+        ctx.moveTo(100, 20); // Start from the top side of the rectangle
+        ctx.lineTo(100, 80); // End at the bottom side of the rectangle
+        ctx.stroke();
+
+        // Add labels for axes
+        ctx.fillStyle = "#000000"; // Text color
+        ctx.font = "12px Arial";
+        ctx.fillText("X", 180, 45); // X axis label
+        ctx.fillText("Y", 110, 15); // Y axis label
+
+        // Mark axes with -20 to 20 labels
+        ctx.fillText("-20", 10, 50); // -20 label on the left
+        ctx.fillText("20", 170, 50); // 20 label on the right
+        ctx.fillText("20", 105, 25); // 20 label on the top
+        ctx.fillText("-20", 105, 75); // -20 label on the bottom
+    </script>
+</body>
+
+</html>
